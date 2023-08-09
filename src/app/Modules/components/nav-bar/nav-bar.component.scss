@@ -1,0 +1,240 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background-color: var(--panel-color);
+  border-right: 1px solid var(--border-color);
+  transition: var(--tran-05);
+}
+
+nav.close {
+  width: 73px;
+}
+
+nav .logo-image {
+  min-width: 45px;
+  display: flex;
+  justify-content: center;
+}
+nav .logo-name {
+  display: flex;
+  align-items: center;
+}
+nav .logo-image img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+nav .logo-name .logo_name {
+  margin-left: 14px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: var(--tran-05);
+}
+
+nav.close .logo_name {
+  opacity: 0;
+  pointer-events: none;
+}
+
+nav .menu-items {
+  margin-top: 40px;
+  height: calc(100% - 90px);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.menu-items li {
+  list-style: none;
+}
+
+.menu-items li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  position: relative;
+}
+
+.menu-items li a:hover::before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  left: -7px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.menu-items li a .nav-icons {
+  min-width: 45px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black-light-color);
+}
+
+.icon-color{
+  color: var(--black-light-color);
+}
+
+.nav-icons {
+  font-size: 22px;
+  min-width: 45px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-items li a .link-name {
+  color: var(--black-light-color);
+  font-size: 18px;
+  font-weight: 400;
+  transition: var(--tran-05);
+}
+nav.close li a .link-name {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav-links{
+  padding-left: 0px !important;
+}
+.menu-items li a:hover .link-name,
+.menu-items li a:hover .nav-icons {
+  color: var(--primary-color);
+}
+
+.menu-items .logout-mode {
+  padding-top: 10px;
+  padding-left: 0px !important;
+  border-top: 1px solid var(--border-color);
+}
+
+.menu-items .mode {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.menu-items .mode-toggle {
+  position: absolute;
+  right: 14px;
+  height: 25px;
+  min-width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.mode-toggle .switch {
+  position: relative;
+  display: inline-block;
+  height: 22px;
+  width: 40px;
+  border-radius: 25px;
+  background-color: var(--toggel-color);
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  height: 15px;
+  width: 15px;
+  transform: translateY(-50%);
+  background-color: var(--panel-color);
+  border-radius: 50%;
+  transition: var(--tran-03);
+}
+
+body.mat-typography.dark .switch::before {
+  left: 20px !important;
+}
+
+.mat-mdc-slide-toggle {
+  --mdc-switch-state-layer-size: 30px !important;
+}
+.mat-mdc-slide-toggle.mat-accent {
+  --mdc-switch-selected-handle-color: #242526 !important;
+  --mdc-switch-selected-hover-handle-color: #ccc !important;
+  --mdc-switch-selected-hover-track-color: #fff !important;
+  --mdc-switch-selected-track-color: #fff !important;
+}
+
+.dashboard {
+  position: relative;
+  left: 250px;
+  background-color: var(--panel-color);
+  height: 100vh;
+  width: calc(100% - 250px);
+  padding: 10px 14px;
+  transition: var(--tran-05);
+}
+
+nav.close ~ .dashboard {
+  left: 73px;
+  width: calc(100% - 73px);
+}
+nav.close ~ .dashboard .top{
+  left: 73px;
+  width: calc(100% - 250px);
+  min-width: 330px;
+}
+
+.dashboard .top{
+  position: fixed;
+  left:250px;
+  top:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 250px);
+  padding: 10px 14px;
+  background-color: var(--panel-color);
+  transition: var(--tran-05);
+}
+
+.dashboard .top .sidebar-toggle{
+  font-size: 26px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.dashboard .top .search-box{
+  position: relative;
+  height: 45px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 30px;
+}
+
+.top .search-box input{
+  position: absolute;
+  border: 1px solid var(--border-color);
+  background-color: var(--panel-color);
+  padding: 0 25px 0 50px;
+  height: 100%;
+  border-radius: 5px;
+  width: 100%;
+  color: var(--text-color);
+  outline: none;
+  font-weight: 400;
+}
+
+.top .search-box .search{
+  position:absolute;
+  left: 15px;
+  z-index: 10;
+  font-size: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--black-light-color);
+}

@@ -1,0 +1,80 @@
+<nav>
+    <div class="logo-name">
+        <div class="logo-image">
+            <img src="../../../../assets/images/dashboard.png" alt="" srcset="">
+        </div>
+
+        <span class="logo_name">
+            Jaikishan Patil
+        </span>
+    </div>
+    <div class="menu-items">
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <mat-icon class="nav-icons">dashboard</mat-icon>
+                    <span class="link-name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <mat-icon class="nav-icons">insert_comment</mat-icon>
+                    <span class="link-name">Content</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <mat-icon class="nav-icons">analytics</mat-icon>
+                    <span class="link-name">Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <mat-icon class="nav-icons">thumb_up</mat-icon>
+                    <span class="link-name">Like</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <mat-icon class="nav-icons">chat</mat-icon>
+                    <span class="link-name">Comments</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <mat-icon class="nav-icons">supervised_user_circle</mat-icon>
+                    <span class="link-name">Users</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="logout-mode">
+            <li>
+                <a href="#">
+                    <mat-icon class="nav-icons">logout</mat-icon>
+                    <span class="link-name">Logout</span>
+                </a>
+            </li>
+            <li class="mode">
+                <a href="#">
+                    <mat-icon *ngIf="!burgerOn" class="nav-icons">dark_mode</mat-icon>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+                <div class="mode-toggle">
+                    <!-- <span class="switch"></span> -->
+                    <mat-slide-toggle></mat-slide-toggle>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section class="dashboard">
+    <div class="top">
+        <mat-icon class="sidebar-toggle" [ngClass]="{'icon-color': true}">reorder</mat-icon>
+
+        <div class="search-box">
+            <mat-icon class="search" [ngClass]="{'icon-color': true}">search</mat-icon>
+            <input type="text" placeholder="Search here...">
+        </div>
+    </div>
+</section>
