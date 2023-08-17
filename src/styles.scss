@@ -27,6 +27,8 @@
     --tran-03:all 0.3s ease;
     --tran-02:all 0.2s ease;
 
+    --box-shadow-color:rgba(0,0,0,0.75)
+
 }
 html{
     scroll-behavior: smooth;
@@ -48,4 +50,5 @@ body.dark{
     --box2-color:#3a3b3c;
     --box3-color:#3a3b3c;
     --title-icon-color:#ccc;
+    --box-shadow-color:rgba(255,255,255,0.75)
 }

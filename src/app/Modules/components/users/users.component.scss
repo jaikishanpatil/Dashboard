@@ -1,0 +1,17 @@
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-close {
+    left: 73px !important;
+    width: calc(100% - 73px) !important;
+}
+.containers{
+    transition: var(--tran-05);
+    width: calc(100% - 250px);
+    position: absolute;
+    left: 250px;
+    height: 100vh;
+    background-color: var(--panel-color);
+}

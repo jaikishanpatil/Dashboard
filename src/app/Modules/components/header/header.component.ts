@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppServiceService } from 'src/app/app-service.service';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   burgerOn:boolean=false
+  constructor(private readonly appService:AppServiceService){}
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -19,6 +21,7 @@ export class HeaderComponent {
       sidebar?.classList.toggle('close');
       sidebarToggle?.classList.toggle('close')
       this.burgerOn = !this.burgerOn
+      this.appService.burgerSubject.next({'burger':this.burgerOn});
     })
   }
 }

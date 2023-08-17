@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppServiceService } from 'src/app/app-service.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,22 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-  constructor(){}
+  constructor(private readonly appService:AppServiceService){}
   dark:boolean=false;
   burgerOn:boolean=false
   
   ngOnInit(): void {
     this.darMode();
+    this.appService.burgerSubject.subscribe(data=>{
+      if(data){
+        this.burgerOn = data.burger
+      }
+    })
   }
-
-  // sliderMenu(){
-  //   const sidebarToggle = document.querySelector('.sidebar-toggle');
-  //   const sidebar = document.querySelector("nav");
-  //   sidebarToggle?.addEventListener('click',()=>{
-  //     sidebar?.classList.toggle('close');
-  //     this.burgerOn = !this.burgerOn
-  //   })
-  // }
   darMode(){
     const body = document.querySelector("body");
     const modeToggle =document.querySelector(".mode-toggle");

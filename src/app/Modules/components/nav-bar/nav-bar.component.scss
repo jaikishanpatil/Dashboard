@@ -8,6 +8,7 @@ nav {
   background-color: var(--panel-color);
   border-right: 1px solid var(--border-color);
   transition: var(--tran-05);
+  box-shadow: inset 0px 0px 7px -2px var(--box-shadow-color);
 }
 
 nav.close {
@@ -61,6 +62,7 @@ nav .menu-items {
   align-items: center;
   height: 50px;
   position: relative;
+  transition: var(--tran-05);
 }
 
 .nav-links li a:hover::before {
@@ -254,4 +256,9 @@ nav.close ~ .dashboard .top{
   border-radius: 50%;
   position: relative;
   top: -5px;
+}
+
+.active{
+  border-radius: 20px;
+  background: var(--toggel-color) !important;
 }
