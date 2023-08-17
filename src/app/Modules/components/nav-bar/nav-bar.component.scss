@@ -63,7 +63,7 @@ nav .menu-items {
   position: relative;
 }
 
-.menu-items li a:hover::before {
+.nav-links li a:hover::before {
   content: "";
   position: absolute;
   height: 5px;
@@ -106,6 +106,16 @@ nav.close li a .link-name {
 }
 .nav-links{
   padding-left: 0px !important;
+}
+body.dark li a:hover::before{
+  background-color: var(--text-color);
+}
+.dark-show{
+
+}
+body.dark .menu-items li a:hover .link-name,
+body.dark .menu-items li a:hover .nav-icons {
+  color: red;
 }
 .menu-items li a:hover .link-name,
 .menu-items li a:hover .nav-icons {
@@ -155,7 +165,7 @@ nav.close li a .link-name {
   transition: var(--tran-03);
 }
 
-body.mat-typography.dark .switch::before {
+body.dark .switch::before {
   left: 20px !important;
 }
 
@@ -237,4 +247,11 @@ nav.close ~ .dashboard .top{
   top: 50%;
   transform: translateY(-50%);
   color: var(--black-light-color);
+}
+
+.top img {
+  width: 40px;
+  border-radius: 50%;
+  position: relative;
+  top: -5px;
 }

@@ -12,17 +12,16 @@ export class NavBarComponent {
   
   ngOnInit(): void {
     this.darMode();
-    this.sliderMenu();
   }
 
-  sliderMenu(){
-    const sidebarToggle = document.querySelector('.sidebar-toggle');
-    const sidebar = document.querySelector("nav");
-    sidebarToggle?.addEventListener('click',()=>{
-      sidebar?.classList.toggle('close');
-      this.burgerOn = !this.burgerOn
-    })
-  }
+  // sliderMenu(){
+  //   const sidebarToggle = document.querySelector('.sidebar-toggle');
+  //   const sidebar = document.querySelector("nav");
+  //   sidebarToggle?.addEventListener('click',()=>{
+  //     sidebar?.classList.toggle('close');
+  //     this.burgerOn = !this.burgerOn
+  //   })
+  // }
   darMode(){
     const body = document.querySelector("body");
     const modeToggle =document.querySelector(".mode-toggle");
