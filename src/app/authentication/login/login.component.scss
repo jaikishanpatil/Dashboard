@@ -80,7 +80,10 @@
     margin-top: 20px;
     position: relative;
 }
-
+.right a,
+.pass-link a{
+    cursor: pointer;
+}
 .right form .field input {
     height: 100%;
     width: 100%;
@@ -125,7 +128,7 @@ form .content {
     font-size: 16px;
     align-items: center;
     // justify-content: space-around;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 form .content .checkbox {
@@ -174,7 +177,7 @@ form .signup-link {
 
 form .pass-link a,
 form .signup-link a {
-    color: #4158d0;
+    // color: #4158d0;
     text-decoration: none;
 }
 

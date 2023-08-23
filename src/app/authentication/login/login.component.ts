@@ -9,7 +9,10 @@ import { LOGIN_FORM_MODEL } from 'src/app/Models/form-base.enum';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private readonly formbilder :FormBuilder,private readonly route:Router){}
+  constructor(
+    private readonly formbilder: FormBuilder,
+    private readonly route: Router
+  ) {}
   form_model = LOGIN_FORM_MODEL;
   loginForm: FormGroup | any;
   get username() {
@@ -22,20 +25,34 @@ export class LoginComponent {
     this.initilizeForm();
   }
 
-  initilizeForm(){
+  initilizeForm() {
     this.loginForm = this.formbilder.group({
-      username:['', {validators:[Validators.required]}],
-      password:['',{validators:[Validators.required]}]
-    })
+      username: ['', { validators: [Validators.required] }],
+      password: ['', { validators: [Validators.required] }],
+    });
   }
-  onSubmit(){
-    if(this.username.value === 'admin' && this.password.value === 'admin'){
+  onSubmit() {
+    if (this.username.value === 'admin' && this.password.value === 'admin') {
       this.route.navigate(['/admin']);
       this.username.reset();
       this.password.reset();
-    }else{
+    } else {
       this.username.reset();
       this.password.reset();
+    }
+  }
+  navigate(key: string) {
+    switch (key) {
+      case 'forget-pass': {
+        this.route.navigate(['/main/forget-password']);
+        break;
+      }
+      case 'crate-account': {
+        this.route.navigate(['/main/crate-account']);
+        break;
+      }
+      default:
+        break;
     }
   }
 }

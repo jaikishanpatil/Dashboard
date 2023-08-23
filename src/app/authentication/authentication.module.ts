@@ -7,11 +7,15 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MaterialModule } from '../Modules/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthenticationComponent } from './authentication.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const components:any[] = [
   LoginComponent,
   ForgetPasswordComponent,
-  NotFoundComponent
+  NotFoundComponent,
+  AuthenticationComponent,
+  RegistrationComponent
 ]
 @NgModule({
   declarations: [...components],

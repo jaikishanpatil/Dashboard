@@ -12,7 +12,7 @@
     </div>
     <div class="right">
         <!-- <h5>Login</h5> -->
-        <p>Don't have an account? <a href="#">Creat Your Account</a> it takes less than a minute</p>
+        <p>Don't have an account? <a (click)="navigate('crate-account')" class="text-primary">Creat Your Account</a> it takes less than a minute</p>
         <form [formGroup]="loginForm">
             <div class="field">
                 <input [formControlName]="form_model.USERNAME" type="text" required>
@@ -28,7 +28,7 @@
                     <label for="remember-me">Remember me</label>
                 </div> -->
                 <div class="pass-link">
-                    <a href="#">Forgot password?</a>
+                    <a (click)="navigate('forget-pass')" class="text-primary">Forgot password?</a>
                 </div>
             </div>
             <div class="field" [ngClass]="{'disabled': loginForm.invalid}">
