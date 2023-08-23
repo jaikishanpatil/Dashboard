@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './authentication/login/login.component';
-import { ForgetPasswordComponent } from './authentication/forget-password/forget-password.component';
-import { NotFoundComponent } from './authentication/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'forget-pass', component: ForgetPasswordComponent },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('../app/authentication/authentication.module').then(
+        (m) => m.AuthenticationModule
+      ),
+  },
   {
     path: 'admin',
     loadChildren: () =>
@@ -15,7 +17,6 @@ const routes: Routes = [
       ),
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

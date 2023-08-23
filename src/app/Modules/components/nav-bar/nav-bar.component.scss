@@ -109,8 +109,12 @@ nav.close li a .link-name {
 .nav-links{
   padding-left: 0px !important;
 }
-body.dark li a:hover::before{
+body.dark li a:hover:before{
   background-color: var(--text-color);
+}
+.nav-links li a:hover i,
+.nav-links li a:hover .link-name{
+  color: var(--primary-color);
 }
 .dark-show{
 
@@ -124,6 +128,9 @@ body.dark .menu-items li a:hover .nav-icons {
   color: var(--primary-color);
 }
 
+.nav-text:hover{
+  color: var(--text-color);
+}
 .menu-items .logout-mode {
   padding-top: 10px;
   padding-left: 0px !important;

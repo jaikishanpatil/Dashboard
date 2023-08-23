@@ -1,1 +1,40 @@
-<p>login works!</p>
+<div class="login-form">
+    <div class="left">
+        <div class="overlay">
+            <h1>Admin Login</h1>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus a at officia omnis quos dolorum,
+                repellat alias, aliquam ex molestias dolorem. Doloribus fuga excepturi animi, ipsam necessitatibus
+                tempore quasi voluptatibus.</p>
+            <span>
+                <p>Login with social media</p>
+            </span> -->
+        </div>
+    </div>
+    <div class="right">
+        <!-- <h5>Login</h5> -->
+        <p>Don't have an account? <a href="#">Creat Your Account</a> it takes less than a minute</p>
+        <form [formGroup]="loginForm">
+            <div class="field">
+                <input [formControlName]="form_model.USERNAME" type="text" required>
+                <label>Email Address</label>
+            </div>
+            <div class="field">
+                <input [formControlName]="form_model.PASSWORD" type="password" required>
+                <label>Password</label>
+            </div>
+            <div class="content">
+                <!-- <div class="checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div> -->
+                <div class="pass-link">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+            <div class="field" [ngClass]="{'disabled': loginForm.invalid}">
+                <!-- <input type="submit" value="Login"> -->
+                <button mat-raised-button color="primary"  class="w-100" (click)="onSubmit()" [disabled]="loginForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

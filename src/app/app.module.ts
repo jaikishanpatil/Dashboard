@@ -8,19 +8,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './authentication/login/login.component';
 import { ForgetPasswordComponent } from './authentication/forget-password/forget-password.component';
 import { NotFoundComponent } from './authentication/not-found/not-found.component';
+import { MaterialModule } from './Modules/material/material.module';
 
-const components: any[] = [
-  LoginComponent,
-  ForgetPasswordComponent,
-  NotFoundComponent,
-];
 @NgModule({
-  declarations: [AppComponent ,...components],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent],
