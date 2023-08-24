@@ -1,1 +1,45 @@
-<p>registration works!</p>
+<div class="reg-form">
+    <div class="right">
+        <h5>Crate an account</h5>
+        <form [formGroup]="regForm">
+            <div class="field">
+                <input [formControlName]="form_model.FIRSTNAME" type="text" required>
+                <label>First Name</label>
+            </div>
+            <div class="field">
+                <input type="password" [formControlName]="form_model.LASTNAME" required>
+                <label>Last Name</label>
+            </div>
+            <div class="field">
+                <input type="text" [formControlName]="form_model.EMAIL" required>
+                <label>Email Address</label>
+            </div>
+            <div class="field">
+                <input type="text" [formControlName]="form_model.USERNAME" required>
+                <label>Username</label>
+            </div>
+            <div class="field">
+                <input type="text" [formControlName]="form_model.PASSWORD" required>
+                <label>Password</label>
+            </div>
+            <div class="field">
+                <input type="text" [formControlName]="form_model.CONFIRMPASSWORD" required>
+                <label>Confirm Password</label>
+            </div>
+            <div class="content">
+                <div class="checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">accept terms and conditions</label>
+                </div>
+                <!-- <div class="pass-link">
+                    <a class="text-primary">Forgot password?</a>
+                </div> -->
+            </div>
+            <div class="buttons">
+                <!-- <input type="submit" value="Login"> -->
+                <button mat-raised-button (click)="onSingUp()" [disabled]="regForm.invalid"  color="primary" class="w-100">Sign Up</button>
+                <button mat-raised-button (click)="onSIngIn()" color="primary" class="w-100">Sing in</button>
+            </div>
+        </form>
+    </div>
+</div>

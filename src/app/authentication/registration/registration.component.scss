@@ -1,0 +1,173 @@
+.reg-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 80%;
+    margin: 1rem auto 1rem auto;
+    background: var(--panel-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 var(--box-shadow-color);
+    position: relative;
+}
+
+.reg-form div {
+    height: auto;
+}
+
+.reg-form .right {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+}
+
+.reg-form .right h5 {
+    font-size: 6vmax;
+    line-height: 1;
+    font-weight: 900;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.reg-form .right p {
+    font-size: 14px;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.right form {
+    padding: 10px 30px 50px 30px;
+}
+
+.right form .field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.right a,
+.pass-link a {
+    cursor: pointer;
+}
+
+.right form .field input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding-left: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.right form .field input:focus,
+form .field input:valid {
+    border-color: var(--primary-color);
+}
+
+.right form .field label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: var(--secondary-color);
+    font-weight: 400;
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+form .field input:focus~label,
+form .field input:valid~label {
+    top: 0%;
+    font-size: 16px;
+    color: var(--primary-color);
+    background: #fff;
+    transform: translateY(-50%);
+}
+
+form .content {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    align-items: center;
+    position: relative;
+    left: 2px;
+    justify-content: flex-start;
+}
+
+form .content .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form .content input {
+    width: 15px;
+    height: 15px;
+    background: red;
+}
+
+form .content label {
+    color: #262626;
+    user-select: none;
+    padding-left: 5px;
+}
+
+form .content .pass-link {
+    color: "";
+}
+
+form .field input[type="submit"] {
+    color: #fff;
+    border: none;
+    padding-left: 0;
+    margin-top: -10px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    transition: all 0.3s ease;
+}
+
+form .field input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+form .signup-link {
+    color: #262626;
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .pass-link a,
+form .signup-link a {
+    // color: #4158d0;
+    text-decoration: none;
+}
+
+form .pass-link a:hover,
+form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+.buttons, .buttons span {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    flex: wrap;
+    justify-content: space-between;
+    align-items: center;
+}

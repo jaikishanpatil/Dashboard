@@ -9,6 +9,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { ForgetPasswordComponent } from './authentication/forget-password/forget-password.component';
 import { NotFoundComponent } from './authentication/not-found/not-found.component';
 import { MaterialModule } from './Modules/material/material.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,9 +18,9 @@ import { MaterialModule } from './Modules/material/material.module';
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
-  providers: [],
+  // providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
