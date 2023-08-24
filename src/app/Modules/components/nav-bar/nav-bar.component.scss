@@ -50,6 +50,7 @@ nav .menu-items {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  overflow: auto; 
 }
 
 .menu-items li {
