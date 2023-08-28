@@ -1,0 +1,21 @@
+<div class="d-flex searchBorder" [class.searchActive]="isInputShown || input.value.length > 0">
+    <div class="search-bar">
+        <input [placeholder]="placeholder + ' ...'" #input class="form-control ml-0"
+            [class.hidden]="!isInputShown && input.value.length === 0" (input)="onInput(input.value)"
+            [(ngModel)]="searchKey" />
+        <a class="search-anchor" title="Search..." container="body">
+            <span *ngIf="!isInputShown" class="search-icon-open"
+                (click)="input.value = ''; showInput(); onInput(input.value)">
+                <mat-icon>search</mat-icon>
+            </span>
+            <span *ngIf="isInputShown" class=" search-icon-close" (click)="
+          input.value = '';
+          hideInput();
+          onInput(input.value);
+          isInputShown = false
+        ">
+                <mat-icon>close</mat-icon>
+            </span>
+        </a>
+    </div>
+</div>
