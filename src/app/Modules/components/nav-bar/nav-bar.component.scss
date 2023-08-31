@@ -175,10 +175,9 @@ body.dark .menu-items li a:hover .nav-icons {
   transition: var(--tran-03);
 }
 
-body.dark .switch::before {
+.toggle-switch::before{
   left: 20px !important;
 }
-
 .mat-mdc-slide-toggle {
   --mdc-switch-state-layer-size: 30px !important;
 }
