@@ -1,0 +1,62 @@
+<div class="table">
+    <div class="table_header" *ngIf="isSearch">
+      <dynamic-search [placeholder]="'Search In Table'" [isInputShown]="true"
+        (change)="onSearch($event)"></dynamic-search>
+    </div>
+    <div class="table_section" [ngClass]="{'mt-4': !isSearch}">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let column of columns" [hidden]="!column.visible">
+              {{ column.label }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr (click)="onClick($event, row, i)" *ngFor="let row of pagedData; let i = index">
+            <ng-container *ngFor="let column of columns; let rowIndex = index">
+              <td *ngIf="column.visible && column.templateRef" class="cell text-wrap">
+                <ng-container *ngTemplateOutlet="
+                    getColumnTemplate(column);
+                    context: {
+                      $implicit: row,
+                      rowIndex: rowIndex,
+                      column: column
+                    }
+                  "></ng-container>
+              </td>
+              <td *ngIf="column.visible && !column.templateRef" class="cell">
+                {{ row[column.key] }}
+              </td>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <div class="totalPage">
+        <span class="row-txt">Rows per page</span>
+        <div class="row-dropdown form-control">
+          <select [(ngModel)]="itemsPerPage" (ngModelChange)="itemsPerPageChange($event)" class="select-options">
+            <option *ngFor="let rpage of itemsPerPageRow" [value]="rpage">
+              {{ rpage }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="pageCount">
+        <div class="paget-text">
+          Showing page no. {{ currentPage ? currentPage : 0 }} to
+          {{ pages?.length ? pages?.length : 0 }} of
+          {{ data.length ? data.length : 0 }}
+        </div>
+        <button href="" class="pages" [disabled]="currentPage == 1" (click)="priousPage()"><<</button>
+        <a class="pages" *ngFor="let page of pages" [class.active]="currentPage === page" (click)="setCurrentPage(page)">{{ page }}</a>
+        <button href="" class="pages" [disabled]="currentPage == pages?.length" (click)="nextPage()">>></button>
+      </div>
+    </div>
+  
+    <ng-template #defaultTemplate let-row let-rowIndex="rowIndex" let-column="column">
+      {{ row }}
+    </ng-template>
+  </div>
