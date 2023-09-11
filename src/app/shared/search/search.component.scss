@@ -27,21 +27,21 @@ a {
 
 span {
     margin: auto;
-    margin-top: 3px;
-    margin-right: 4px;
 }
 
 .searchBorder {
     border: 1px solid transparent;
     display: flex;
+    padding: 1px;
+    border-radius: 50%;
 }
 
 .searchActive {
-    background-color: #fff;
+    background-color: var(--panel-color);
     padding: 2px 1px;
     padding-left: 15px;
     border-radius: 30px;
-    border: 1px solid #acacac;
+    border: 1px solid var(--border-color);
 }
 
 .icon {
@@ -76,4 +76,7 @@ span {
 
 .search-icon-open {
     color: blue;
+}
+.search-bar input::placeholder{
+    color: var(--border-color);
 }
