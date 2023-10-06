@@ -8,6 +8,7 @@ import { MaterialModule } from '../../material/material.module';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HeaderComponent } from '../header/header.component';
 import { UsersComponent } from '../users/users.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const components: any[] = [
   MainComponent,
@@ -19,7 +20,7 @@ const components: any[] = [
 
 @NgModule({
   declarations: [...components],
-  imports: [CommonModule, MainRoutingModule, MaterialModule],
+  imports: [CommonModule, MainRoutingModule, MaterialModule, SharedModule],
   exports:[...components]
 })
 export class MainModule {}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AppServiceService } from 'src/app/services/app-service.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { AppServiceService } from 'src/app/services/app-service.service';
 })
 export class HeaderComponent {
   burgerOn:boolean=false
+  @Input() image:any=''
   constructor(private readonly appService:AppServiceService){}
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
