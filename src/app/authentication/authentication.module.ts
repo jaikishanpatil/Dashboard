@@ -9,6 +9,7 @@ import { MaterialModule } from '../Modules/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationComponent } from './authentication.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SharedModule } from '../shared/shared.module';
 
 const components:any[] = [
   LoginComponent,
@@ -23,7 +24,8 @@ const components:any[] = [
     CommonModule,
     AuthenticationRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   exports:[...components]
 })

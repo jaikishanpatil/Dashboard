@@ -4,14 +4,19 @@ p{
     align-items: center;
 }
 .dashboard-close {
-    left: 73px !important;
-    width: calc(100% - 73px) !important;
+    left: var(--container-width-close) !important;
+    width: calc(100% - var(--container-width-close)) !important;
 }
 .containers{
     transition: var(--tran-05);
-    width: calc(100% - 250px);
+    width: calc(100% - var(--container-width-open));
     position: absolute;
-    left: 250px;
+    left: var(--container-width-open);
     height: calc(100vh - 10vh);
     background-color: var(--panel-color);
+    padding-left: 0.5rem;
+}
+
+.dash-contaent .title{ 
+
 }

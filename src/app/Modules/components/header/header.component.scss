@@ -1,33 +1,33 @@
   .dashboard {
       position: relative;
-      left: 250px;
+      left: var(--container-width-open);
       background-color: var(--panel-color);
       height: 12vh;
-      width: calc(100% - 250px);
+      width: calc(100% - var(--container-width-open));
       padding: 10px 14px;
       transition: var(--tran-05);
       z-index: 1;
   }
 
   .dashboard-close {
-      left: 73px !important;
-      width: calc(100% - 73px) !important;
+      left: var(--container-width-close) !important;
+      width: calc(100% - var(--container-width-close)) !important;
   }
 
   .dashboard-close-top {
-      left: 73px !important;
-      width: calc(100% - 73px) !important;
+      left: var(--container-width-close) !important;
+      width: calc(100% - var(--container-width-close)) !important;
       min-width: 330px !important;
   }
 
   .dashboard .top {
       position: fixed;
-      left: 250px;
+      left: var(--container-width-open);
       top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: calc(100% - 250px);
+      width: calc(100% - var(--container-width-open));
       padding: 10px 14px;
       background-color: var(--panel-color);
       transition: var(--tran-05);

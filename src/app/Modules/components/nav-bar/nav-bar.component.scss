@@ -3,7 +3,7 @@ nav {
   top: 0;
   left: 0;
   height: 100%;
-  width: 250px;
+  width: var(--container-width-open);
   padding: 10px 14px;
   background-color: var(--panel-color);
   border-right: 1px solid var(--border-color);
@@ -12,7 +12,7 @@ nav {
 }
 
 nav.close {
-  width: 73px;
+  width: var(--container-width-close);
 }
 
 nav .logo-image {
@@ -50,7 +50,7 @@ nav .menu-items {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  overflow: auto; 
+  // overflow: auto; 
 }
 
 .menu-items li {
@@ -109,6 +109,11 @@ nav.close li a .link-name {
 }
 .nav-links{
   padding-left: 0px !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.nav-links::-webkit-scrollbar{
+  width: 0.3rem !important;
 }
 body.dark li a:hover:before{
   background-color: var(--text-color);
@@ -117,12 +122,16 @@ body.dark li a:hover:before{
 .nav-links li a:hover .link-name{
   color: var(--primary-color);
 }
+body.dark .nav-links li a:hover i,
+body.dark .nav-links li a:hover .link-name{
+  color: var(--text-color);
+}
 .dark-show{
 
 }
 body.dark .menu-items li a:hover .link-name,
 body.dark .menu-items li a:hover .nav-icons {
-  color: red;
+  color: var(--text-color);
 }
 .menu-items li a:hover .link-name,
 .menu-items li a:hover .nav-icons {
@@ -190,32 +199,32 @@ body.dark .menu-items li a:hover .nav-icons {
 
 .dashboard {
   position: relative;
-  left: 250px;
+  left: var(--container-width-open);
   background-color: var(--panel-color);
   height: 100vh;
-  width: calc(100% - 250px);
+  width: calc(100% - var(--container-width-open));
   padding: 10px 14px;
   transition: var(--tran-05);
 }
 
 nav.close ~ .dashboard {
-  left: 73px;
-  width: calc(100% - 73px);
+  left: var(--container-width-close);
+  width: calc(100% - var(--container-width-close));
 }
 nav.close ~ .dashboard .top{
-  left: 73px;
-  width: calc(100% - 250px);
+  left: var(--container-width-close);
+  width: calc(100% - var(--container-width-open));
   min-width: 330px;
 }
 
 .dashboard .top{
   position: fixed;
-  left:250px;
+  left:var(--container-width-open);
   top:0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 250px);
+  width: calc(100% - var(--container-width-open));
   padding: 10px 14px;
   background-color: var(--panel-color);
   transition: var(--tran-05);
